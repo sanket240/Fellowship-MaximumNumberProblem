@@ -10,11 +10,12 @@ public class MaximumNumber <T>{
             max = z;
         return max;
     }
-    public static <E extends Comparable<E>> void MultipleParameters( E[] a)
+    public static <E extends Comparable<E>> void testMaximum( E[] a)
     {
-        E temp,x,y;
-        int n=a.length;
-        for(int i=0;i<n;i++)
+        E temp = null,x,y;
+        int i,n=a.length;
+        int maxValue=n-1;
+        for(i=0;i<n;i++)
         {
             for (int j=i+1;j<n;j++)
             {
@@ -26,11 +27,17 @@ public class MaximumNumber <T>{
                 }
             }
         }
+        temp=a[maxValue];
         System.out.println("Sorted Array is:");
-        for(int i=0;i< a.length;i++)
+        for(i=0;i< a.length;i++)
         {
             System.out.println(a[i]);
         }
+        printMax(temp);
+    }
+    public static <E> void printMax(E a)
+    {
+        System.out.println("The maximum value is:"+a);
     }
     public static void main(String args[])
     {
@@ -40,8 +47,8 @@ public class MaximumNumber <T>{
         Integer[] a={1,2,3,4,5,6};
         String[] s={"san","ssd","abc","rty"};
         Double[] d={11.09,20.59,12.45,23.67};
-        MultipleParameters(a);
-        MultipleParameters(s);
-        MultipleParameters(d);
+        testMaximum(a);
+        testMaximum(s);
+        testMaximum(d);
     }
 }
